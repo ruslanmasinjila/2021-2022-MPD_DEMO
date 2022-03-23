@@ -27,8 +27,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //#################################################################################################
+
         startDateValue = findViewById(R.id.startDateValue);
+        startDateValue.setOnClickListener(this);
+
+        //#################################################################################################
+
         endDateValue  = findViewById(R.id.endDateValue);
+        endDateValue.setOnClickListener(this);
 
         //#################################################################################################
 
@@ -40,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         filerBySpinner.setAdapter(filerBySpinnerAdapter);
 
         //#################################################################################################
+
         sortBySpinner  = findViewById(R.id.sortBySpinner);
 
         ArrayAdapter<CharSequence> sortrBySpinnerAdapter = ArrayAdapter.createFromResource(this,
@@ -50,8 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //#################################################################################################
 
 
-        startDateValue.setOnClickListener(this);
-        endDateValue.setOnClickListener(this);
+
 
 
     }

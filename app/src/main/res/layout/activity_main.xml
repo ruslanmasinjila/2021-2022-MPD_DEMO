@@ -13,14 +13,9 @@
         android:layout_height="match_parent">
         <include layout="@layout/traffic_info"/>
         <include layout="@layout/route_planner"/>
+
     </ViewFlipper>
 
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical">
-    </LinearLayout>
 
 
 </LinearLayout>
