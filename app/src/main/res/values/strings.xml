@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MPD_DEMO</string>
+    <string-array name="filterByOptions">
+        <item> </item>
+        <item>ALL</item>
+        <item>Roadworks</item>
+    </string-array>
+    <string-array name="sortByOptions">
+        <item> </item>
+        <item>Ascending Date</item>
+        <item>Descending Date</item>
+    </string-array>
+</resources>
