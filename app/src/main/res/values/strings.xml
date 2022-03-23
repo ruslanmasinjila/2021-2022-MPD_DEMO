@@ -3,11 +3,11 @@
     <string-array name="filterByOptions">
         <item> </item>
         <item>ALL</item>
-        <item>Roadworks</item>
+        <item>ROADWORKS</item>
     </string-array>
     <string-array name="sortByOptions">
         <item> </item>
-        <item>Ascending Date</item>
-        <item>Descending Date</item>
+        <item>OLDEST FIRST</item>
+        <item>NEWEST FIRST</item>
     </string-array>
 </resources>
