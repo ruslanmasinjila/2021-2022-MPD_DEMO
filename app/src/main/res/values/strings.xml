@@ -1,12 +1,10 @@
 <resources>
     <string name="app_name">MPD_DEMO</string>
     <string-array name="filterByOptions">
-        <item> </item>
         <item>ALL</item>
         <item>ROADWORKS</item>
     </string-array>
     <string-array name="sortByOptions">
-        <item> </item>
         <item>OLDEST FIRST</item>
         <item>NEWEST FIRST</item>
     </string-array>

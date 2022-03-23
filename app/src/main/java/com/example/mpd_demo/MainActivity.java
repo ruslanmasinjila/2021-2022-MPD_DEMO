@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     Button goToTrafficInfo;
+    Button goToWelcome;
     EditText startDateValue;
     EditText endDateValue;
     Spinner filerBySpinner;
@@ -63,9 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         goToTrafficInfo = findViewById(R.id.goToTrafficInfo);
         goToTrafficInfo.setOnClickListener(this);
         //#################################################################################################
+        goToWelcome = findViewById(R.id.goToWelcome);
+        goToWelcome.setOnClickListener(this);
+        //#################################################################################################
         viewFlipper = findViewById(R.id.viewFlipper);
-
-
         //#################################################################################################
 
 
@@ -113,10 +115,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(v==goToTrafficInfo)
         {
-
-            viewFlipper.setDisplayedChild(1);
             viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.trafficInfo)));
 
+        }
+
+        if(v==goToWelcome)
+        {
+            viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.welcome)));
         }
 
     }

@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include layout="@layout/welcome_page"/>
+        <include layout="@layout/welcome_page"
+            android:id="@+id/welcome"/>
 
         <include layout="@layout/traffic_info"
             android:id="@+id/trafficInfo"/>
