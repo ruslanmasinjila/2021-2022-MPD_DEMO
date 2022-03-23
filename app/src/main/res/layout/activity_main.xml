@@ -11,8 +11,14 @@
         android:id="@+id/viewFlipper"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <include layout="@layout/traffic_info"/>
-        <include layout="@layout/route_planner"/>
+
+        <include layout="@layout/welcome_page"/>
+
+        <include layout="@layout/traffic_info"
+            android:id="@+id/trafficInfo"/>
+
+        <include layout="@layout/route_planner"
+            android:id="@+id/routePlanner"/>
 
     </ViewFlipper>
 

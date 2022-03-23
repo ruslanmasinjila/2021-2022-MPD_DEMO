@@ -7,20 +7,24 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.ViewFlipper;
 
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
+    Button goToTrafficInfo;
     EditText startDateValue;
     EditText endDateValue;
     Spinner filerBySpinner;
     Spinner sortBySpinner;
-    private int mYear, mMonth, mDay;
+    int mYear, mMonth, mDay;
+    ViewFlipper viewFlipper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 R.array.sortByOptions, android.R.layout.simple_spinner_item);
         filerBySpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sortBySpinner.setAdapter(sortrBySpinnerAdapter);
+
+        //#################################################################################################
+        goToTrafficInfo = findViewById(R.id.goToTrafficInfo);
+        goToTrafficInfo.setOnClickListener(this);
+        //#################################################################################################
+        viewFlipper = findViewById(R.id.viewFlipper);
+
 
         //#################################################################################################
 
@@ -98,6 +109,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }, mYear, mMonth, mDay );
             datePickerDialog.show ();
+        }
+
+        if(v==goToTrafficInfo)
+        {
+
+            viewFlipper.setDisplayedChild(1);
+            viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.trafficInfo)));
+
         }
 
     }

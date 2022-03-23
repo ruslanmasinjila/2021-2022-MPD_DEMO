@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/mainTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TRAFFIC SCOTLAND"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/welcomeNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="24sp"
+            android:text="Welcome to Traffic Scotland. Please Chooose one of the options"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/goToTrafficInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TRAFFIC INFORMATION" />
+
+        <Button
+            android:id="@+id/goToRoutePlanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ROUTE PLANNER" />
+    </LinearLayout>
+
+
+</LinearLayout>
