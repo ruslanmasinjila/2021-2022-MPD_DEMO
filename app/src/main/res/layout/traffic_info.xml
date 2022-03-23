@@ -18,7 +18,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="left"
             android:text="BACK"
-            android:textColor="#0CF345" />
+            android:textColor="#FA0421"
+            android:textSize="18sp" />
 
 
     </LinearLayout>
@@ -60,7 +61,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="START DATE: "
-            android:textColor="#F80054"
+            android:textColor="#00B7FF"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -92,7 +93,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="END DATE: "
-            android:textColor="#F80054"
+            android:textColor="#00B7FF"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -123,7 +124,7 @@
             android:layout_weight="1.5"
             android:gravity="left"
             android:text="FILTER BY: "
-            android:textColor="#F80054"
+            android:textColor="#00B7FF"
             android:textSize="18dp"
             android:textStyle="bold" />
 
@@ -156,7 +157,7 @@
             android:layout_weight="1.5"
             android:gravity="left"
             android:text="SORT BY: "
-            android:textColor="#F80054"
+            android:textColor="#00B7FF"
             android:textSize="18dp"
             android:textStyle="bold" />
 
