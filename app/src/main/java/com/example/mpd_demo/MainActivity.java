@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,12 +16,16 @@ import android.widget.Spinner;
 import android.widget.ViewFlipper;
 
 import java.util.Calendar;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    RSSReader rssReader = new RSSReader();
 
     Button goToTrafficInfo;
     Button goToWelcome;
+    Button displayInformation;
     EditText startDateValue;
     EditText endDateValue;
     Spinner filerBySpinner;
@@ -61,13 +67,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sortBySpinner.setAdapter(sortrBySpinnerAdapter);
 
         //#################################################################################################
+
         goToTrafficInfo = findViewById(R.id.goToTrafficInfo);
         goToTrafficInfo.setOnClickListener(this);
+
         //#################################################################################################
+
         goToWelcome = findViewById(R.id.goToWelcome);
         goToWelcome.setOnClickListener(this);
+
         //#################################################################################################
+
+        displayInformation = findViewById(R.id.displayInformation);
+        displayInformation.setOnClickListener(this);
+
+        //#################################################################################################
+
         viewFlipper = findViewById(R.id.viewFlipper);
+
         //#################################################################################################
 
 
@@ -122,6 +139,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v==goToWelcome)
         {
             viewFlipper.setDisplayedChild(viewFlipper.indexOfChild(findViewById(R.id.welcome)));
+        }
+
+        if(v==displayInformation)
+        {
+            ExecutorService executor = Executors.newSingleThreadExecutor();
+            Handler handler = new Handler(Looper.getMainLooper());
+
+            executor.execute(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    ///////////////////////////////////////////////////////////////////////////////////
+
+                    // Fetch RSS data from BBC News
+                    rssReader.FetchRSS();
+
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            System.out.println(rssReader.getRSSString());
+
+                        }
+                    });
+
+
+
+                }
+            });
         }
 
     }
