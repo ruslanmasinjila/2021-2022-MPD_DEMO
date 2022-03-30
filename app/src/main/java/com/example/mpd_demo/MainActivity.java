@@ -159,12 +159,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
+                            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                             System.out.println(rssReader.getRSSString());
+                            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
                         }
                     });
-
-
 
                 }
             });

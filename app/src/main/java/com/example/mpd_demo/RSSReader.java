@@ -5,8 +5,10 @@ import java.io.*;
 
 public class RSSReader
 {
-    private String urlString = "https://m.highwaysengland.co.uk/feeds/rss/UnplannedEvents.xml";
+    private String urlString = "http://m.highwaysengland.co.uk/feeds/rss/AllEvents.xml";
     private String rssString = "";
+    int numLines = 1000;
+
 
 
 
@@ -20,10 +22,19 @@ public class RSSReader
 
             String inputLine;
 
+            int counter = 0;
+
             while ((inputLine = in .readLine()) != null)
             {
-                rssString += inputLine;
+                if(counter<numLines)
+                {
+                    rssString += inputLine;
+                    counter++;
+                }
             }
+
+            PrintWriter out = new PrintWriter("filename.txt");
+            out.println(rssString);
             in .close();
 
         }
