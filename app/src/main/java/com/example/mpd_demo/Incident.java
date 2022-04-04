@@ -2,12 +2,9 @@ package com.example.mpd_demo;
 
 public class Incident {
 
-    private String title = "";//
-    private String category = "";//
-    private String severity = "";//
-    private String description = "";//
-    private String road = "";//
-    private String region="";//
+    private String title = "";
+    private String description = "";
+    private String road = "";
     private String latitude = "";
     private String longitude = "";
     private String eventStart = "";
@@ -20,22 +17,6 @@ public class Incident {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getSeverity() {
-        return severity;
-    }
-
-    public void setSeverity(String severity) {
-        this.severity = severity;
     }
 
     public String getDescription() {
@@ -54,13 +35,6 @@ public class Incident {
         this.road = road;
     }
 
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
 
     public String getLatitude() {
         return latitude;
@@ -100,15 +74,9 @@ public class Incident {
         incident+= "==========================" + "\n"
                 +title + "\n"
                 +"==========================" + "\n"
-                +category     + "\n"
-                +"==========================" + "\n"
-                +severity     + "\n"
-                +"==========================" + "\n"
                 +description     + "\n"
                 +"==========================" + "\n"
                 +road     + "\n"
-                +"==========================" + "\n"
-                +region     + "\n"
                 +"==========================" + "\n"
                 +latitude     + "\n"
                 +"==========================" + "\n"

@@ -22,6 +22,7 @@ import java.util.concurrent.Executors;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     RSSReader rssReader = new RSSReader();
+    RSSParser rssParser = new RSSParser();
 
     Button goToTrafficInfo;
     Button goToWelcome;
@@ -152,12 +153,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Fetch RSS data from BBC News
                     rssReader.FetchRSS();
 
+                    // Parse RSS String
+                    rssParser.parseRSSString(rssReader.getRSSString());
+
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-                            System.out.println(rssReader.getRSSString());
-                            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 
                         }
                     });

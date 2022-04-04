@@ -19,7 +19,7 @@ public class RSSParser
 
     public LinkedList<Incident> parseRSSString(String rssString)
     {
-        Incident incident = null;
+        Incident incident = new Incident();
 
         try
         {
@@ -49,80 +49,56 @@ public class RSSParser
                         }
 
                     }
-                    else
-                    if (xpp.getName().equalsIgnoreCase("item"))
-                    {
-                        incident = new Incident();
-                    }
-                    else
-                    if (xpp.getName().equalsIgnoreCase("title"))
+
+                    else if (xpp.getName().equalsIgnoreCase("title"))
                     {
                         // Now just get the associated text
                         String temp = xpp.nextText();
                         incident.setTitle(temp);
 
                     }
-                    else
-                        if (xpp.getName().equalsIgnoreCase("category"))
-                        {
-                            // Now just get the associated text
-                            String temp = xpp.nextText();
-                            incident.setCategory(temp);
-                        }
-                        else if (xpp.getName().equalsIgnoreCase("severity"))
-                            {
-                                // Now just get the associated text
-                                String temp = xpp.nextText();
-                                incident.setSeverity(temp);
-                            }
-                        else if (xpp.getName().equalsIgnoreCase("description"))
-                        {
-                            // Now just get the associated text
-                            String temp = xpp.nextText();
-                            incident.setDescription(temp);
-                        }
+                    else if (xpp.getName().equalsIgnoreCase("description"))
+                    {
+                        // Now just get the associated text
+                        String temp = xpp.nextText();
+                        incident.setDescription(temp);
+                    }
 
-                        else if (xpp.getName().equalsIgnoreCase("road"))
-                        {
-                            // Now just get the associated text
-                            String temp = xpp.nextText();
-                            incident.setRoad(temp);
-                        }
+                    else if (xpp.getName().equalsIgnoreCase("road"))
+                    {
+                        // Now just get the associated text
+                        String temp = xpp.nextText();
+                        incident.setRoad(temp);
+                    }
 
-                        else if (xpp.getName().equalsIgnoreCase("region"))
-                        {
-                            // Now just get the associated text
-                            String temp = xpp.nextText();
-                            incident.setRegion(temp);
-                        }
 
-                        else if (xpp.getName().equalsIgnoreCase("latitude"))
-                        {
-                            // Now just get the associated text
-                            String temp = xpp.nextText();
-                            incident.setLatitude(temp);
-                        }
+                    else if (xpp.getName().equalsIgnoreCase("latitude"))
+                    {
+                        // Now just get the associated text
+                        String temp = xpp.nextText();
+                        incident.setLatitude(temp);
+                    }
 
-                        else if (xpp.getName().equalsIgnoreCase("longitude"))
-                        {
-                            // Now just get the associated text
-                            String temp = xpp.nextText();
-                            incident.setLongitude(temp);
-                        }
+                    else if (xpp.getName().equalsIgnoreCase("longitude"))
+                    {
+                        // Now just get the associated text
+                        String temp = xpp.nextText();
+                        incident.setLongitude(temp);
+                    }
 
-                        else if (xpp.getName().equalsIgnoreCase("eventStart"))
-                        {
-                            // Now just get the associated text
-                            String temp = xpp.nextText();
-                            incident.setEventStart(temp);
-                        }
+                    else if (xpp.getName().equalsIgnoreCase("eventStart"))
+                    {
+                        // Now just get the associated text
+                        String temp = xpp.nextText();
+                        incident.setEventStart(temp);
+                    }
 
-                        else if (xpp.getName().equalsIgnoreCase("eventEnd"))
-                        {
-                            // Now just get the associated text
-                            String temp = xpp.nextText();
-                            incident.setEventEnd(temp);
-                        }
+                    else if (xpp.getName().equalsIgnoreCase("eventEnd"))
+                    {
+                        // Now just get the associated text
+                        String temp = xpp.nextText();
+                        incident.setEventEnd(temp);
+                    }
 
 
                 }
@@ -157,6 +133,8 @@ public class RSSParser
         {
             System.out.println("Parsing Error "+e.toString());
         }
+        System.out.println(incidentList.getFirst().toString());
+        System.out.println(titleList.getFirst().toString());
         return incidentList;
     }
 
